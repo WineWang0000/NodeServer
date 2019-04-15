@@ -14,6 +14,9 @@
 	 let script = document.createElement('script')
 	 script.src = '/pay'
 	 document.body.appendChild(script)
+	 script.onload = function(e){
+		amount.innerText = amount.innerText - 1
+	 }
 	 })
 	</script>
 </body>

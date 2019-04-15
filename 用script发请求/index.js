@@ -41,13 +41,12 @@ var server = http.createServer(function(request, response){
 		response.setHeader('Content-Type', 'application/javascript')
 		response.write(string)
 		response.end()
-	}else if(path === '/pay' && method === "POST"){
+	}else if(path === '/pay'){
     var amount = fs.readFileSync('./db', 'utf8')
 		var newAmount = amount - 1 
 		fs.writeFileSync('./db', newAmount)
 		response.setHeader('Content-Type', 'application/javascript')
-
-		response.write('success')
+		response.write('alert("success")')
 		response.end()
 	}else{
 		response.statusCode = 404
